@@ -1,229 +1,235 @@
 <div align="center">
 
-# 🇧🇷 OSINT Brasil — Explorador de Ferramentas
+# 🇧🇷 OSINT Brasil — Tools Explorer
 
-**O maior diretório gratuito de ferramentas OSINT do mundo**
+**The world's largest free OSINT tools directory**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Ferramentas](https://img.shields.io/badge/Ferramentas-1.300%2B-blue)](https://osintbrasil.com)
-[![Categorias](https://img.shields.io/badge/Categorias-53-green)](https://osintbrasil.com)
-[![Idiomas](https://img.shields.io/badge/Idiomas-30-orange)](https://osintbrasil.com)
+[![Tools](https://img.shields.io/badge/Tools-1%2C300%2B-blue)](https://osint.juanmathewsrebellosantos.com)
+[![Categories](https://img.shields.io/badge/Categories-53-green)](https://osint.juanmathewsrebellosantos.com)
+[![Languages](https://img.shields.io/badge/Languages-30-orange)](https://osint.juanmathewsrebellosantos.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-[🌐 Acesse Online](https://osintbrasil.com) · [📱 Android](#android) · [💻 Desktop](#desktop) · [🐛 Reportar Bug](https://github.com/azurejoga/osint-explorer/issues) · [💡 Sugerir Funcionalidade](https://github.com/azurejoga/osint-explorer/issues)
+[🌐 Live Demo](https://osint.juanmathewsrebellosantos.com) · [📱 Android](#android) · [💻 Desktop](#desktop-electron) · [🐛 Report Bug](https://github.com/azurejoga/osint-explorer/issues) · [💡 Request Feature](https://github.com/azurejoga/osint-explorer/issues)
 
-![OSINT Brasil Screenshot](https://osintbrasil.com/og-image.png)
+**Read this in other languages:**
+[🇧🇷 Português](README.pt.md) · [🇪🇸 Español](README.es.md) · [🇨🇳 中文](README.zh.md) · [🇯🇵 日本語](README.ja.md)
 
 </div>
 
 ---
 
-## 📋 Índice
+## 📋 Table of Contents
 
-- [Sobre o Projeto](#sobre-o-projeto)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias](#tecnologias)
-- [Início Rápido](#início-rápido)
-- [Instalação](#instalação)
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Quick Start](#quick-start)
+- [Installation](#installation)
 - [Desktop (Electron)](#desktop-electron)
 - [Android](#android)
 - [Build](#build)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Internacionalização](#internacionalização)
+- [Project Structure](#project-structure)
+- [Internationalization](#internationalization)
 - [SEO](#seo)
-- [Contribuindo](#contribuindo)
-- [Segurança](#segurança)
-- [Licença](#licença)
-- [Autor](#autor)
+- [Contributing](#contributing)
+- [Security](#security)
+- [License](#license)
+- [Author](#author)
 
 ---
 
-## 🔍 Sobre o Projeto
+## 🔍 About
 
-**OSINT Brasil** é uma plataforma open-source completa para profissionais de inteligência, investigadores, jornalistas e pesquisadores de segurança cibernética. Reúne **mais de 1.300 ferramentas de Open Source Intelligence (OSINT)** organizadas em **53 categorias**, com suporte a **30 idiomas** e disponível para **web, desktop (Windows/macOS/Linux) e Android**.
+**OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **1,300+ Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **30 languages**, available as a **web app, Windows desktop app, and Android app**.
 
-As ferramentas são atualizadas automaticamente a partir do repositório [awesome-osint](https://github.com/jivoi/awesome-osint) no GitHub, garantindo que o diretório esteja sempre atualizado.
+Tools are automatically updated from the [awesome-osint](https://github.com/jivoi/awesome-osint) repository on GitHub, keeping the directory always current.
 
-### 🎯 Para quem é?
+### 🎯 Who is it for?
 
-| Perfil | Uso |
+| Profile | Use Case |
 |---|---|
-| 🕵️ Investigadores privados | Busca de pessoas, registros públicos, redes sociais |
-| 📰 Jornalistas | Verificação de fatos, rastreamento de fontes |
-| 🔐 Profissionais de cibersegurança | Threat intelligence, análise de malware, OSINT técnico |
-| 🎓 Pesquisadores acadêmicos | Coleta de dados, análise de redes sociais |
-| 🏛️ Forças de segurança | Investigação digital, geolocalização |
+| 🕵️ Private investigators | People search, public records, social media |
+| 📰 Journalists | Fact-checking, source tracking |
+| 🔐 Cybersecurity professionals | Threat intelligence, malware analysis, technical OSINT |
+| 🎓 Academic researchers | Data collection, social network analysis |
+| 🏛️ Law enforcement | Digital investigation, geolocation |
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- **🔄 Atualização automática** — Sincroniza com o GitHub na abertura, fallback para cache offline
-- **🌍 30 idiomas** — Português, Inglês, Espanhol, Francês, Alemão, Russo, Chinês, Japonês, Árabe e muito mais
-- **📱 Multiplataforma** — Web, Windows, macOS, Linux e Android
-- **🔍 Busca avançada** — Pesquisa em tempo real por nome, descrição e tags
-- **📂 53 categorias** — Organizadas em grupos temáticos com acordeão expansível
-- **⭐ Favoritos** — Salve ferramentas favoritas com persistência local
-- **🎨 5 modos de visualização** — Grade, Lista, Tabela, Árvore, Compacto
-- **🌙 Tema escuro/claro** — Persistido no localStorage
-- **♿ Acessibilidade** — ARIA labels, skip links, suporte a RTL (Árabe, Persa)
-- **🔎 SEO agressivo** — Meta tags, Open Graph, Twitter Cards, hreflang para 30 idiomas
-- **🔧 Ferramentas personalizadas** — Adicione suas próprias ferramentas ao diretório
-- **📊 Estatísticas em tempo real** — Total de ferramentas, status online/offline, favoritos
+- **🔄 Auto-update** — Syncs with GitHub on every launch, offline fallback to bundled cache
+- **🌍 30 languages** — Portuguese, English, Spanish, French, German, Russian, Chinese, Japanese, Arabic and more
+- **📱 Cross-platform** — Web, Windows and Android
+- **🔍 Real-time search** — Search by name, description and tags across 1,300+ tools
+- **📂 53 categories** — Organized in thematic groups with expandable accordion sidebar
+- **⭐ Favorites** — Save favorite tools with local persistence
+- **🎨 5 view modes** — Grid, List, Table, Tree, Compact
+- **🌙 Dark / light theme** — Persisted in localStorage
+- **♿ Accessibility** — ARIA labels, skip links, full RTL support (Arabic, Persian)
+- **🔎 Aggressive SEO** — Meta tags, Open Graph, Twitter Cards, hreflang for 30 languages
+- **📊 Real-time stats** — Total tools, online/offline status, favorites count
 
 ---
 
-## 🛠️ Tecnologias
+## 🛠️ Tech Stack
 
-| Camada | Tecnologia |
+| Layer | Technology |
 |---|---|
 | Frontend | React 18, Vite 5 |
-| Estilização | Tailwind CSS 3 |
-| Ícones | Lucide React |
+| Styling | Tailwind CSS 3 |
+| Icons | Lucide React |
 | Desktop | Electron 41 |
 | Mobile | Capacitor 8 (Android) |
 | Build | electron-builder |
-| Dados | GitHub API + parseMD local |
-| Estado | React Context API |
-| Persistência | localStorage |
+| Data | GitHub API + local parseMD |
+| State | React Context API |
+| Persistence | localStorage |
 
 ---
 
-## 🚀 Início Rápido
+## 🚀 Quick Start
 
-### Pré-requisitos
+### Prerequisites
 
 - [Node.js](https://nodejs.org/) >= 18
 - npm >= 9
 
-### Desenvolvimento local
+### Local development
 
 ```bash
-# 1. Clone o repositório
+# 1. Clone the repository
 git clone https://github.com/azurejoga/osint-explorer.git
 cd osint-explorer
 
-# 2. Instale as dependências
+# 2. Install dependencies
 npm install
 
-# 3. Inicie o servidor de desenvolvimento
+# 3. Start the dev server
 npm run dev
 ```
 
-Acesse `http://localhost:5173`
+Open `http://localhost:5173`
 
 ---
 
-## 💾 Instalação
+## 💾 Installation
 
 ### 🌐 Web
 
-Acesse diretamente em [osintbrasil.com](https://osintbrasil.com) — sem instalação necessária.
+Access directly at [osint.juanmathewsrebellosantos.com](https://osint.juanmathewsrebellosantos.com) — no installation required.
 
 ### 💻 Desktop (Electron)
 
-Baixe o executável para seu sistema operacional na [página de releases](https://github.com/azurejoga/osint-explorer/releases):
+Download the Windows executable from the [releases page](https://github.com/azurejoga/osint-explorer/releases):
 
-| Sistema | Arquivo | Tipo |
+| Platform | File | Type |
 |---|---|---|
-| Windows | `OSINT Tools Explorer Setup X.X.X.exe` | Instalador |
-| Windows | `OSINT Tools Explorer X.X.X.exe` | Portátil (sem instalação) |
-| macOS | `OSINT Tools Explorer-X.X.X.dmg` | Instalador |
-| Linux | `OSINT-Tools-Explorer-X.X.X.AppImage` | Portátil |
+| Windows | `OSINT Tools Explorer Setup X.X.X.exe` | Installer |
+| Windows | `OSINT Tools Explorer X.X.X.exe` | Portable (no install needed) |
 
 ### 📱 Android
 
-Baixe o APK na [página de releases](https://github.com/azurejoga/osint-explorer/releases) e instale diretamente no seu dispositivo Android (habilite "Fontes desconhecidas" nas configurações).
+Download the APK from the [releases page](https://github.com/azurejoga/osint-explorer/releases) and install it directly on your Android device (enable "Unknown sources" in Settings → Security).
 
 ---
 
 ## 🔧 Build
 
-### Build completo (Electron + Android)
+### Full build (Electron + Android sync)
 
 ```bash
 npm run build
 ```
 
-### Apenas Electron (Windows)
+### Windows only (Electron)
 
 ```bash
 npm run build:electron
 ```
 
-### Apenas Android
+Outputs to `dist-electron/`:
+- `OSINT Tools Explorer Setup X.X.X.exe` — NSIS installer
+- `OSINT Tools Explorer X.X.X.exe` — portable executable
+
+### Android
 
 ```bash
+# Sync web assets to Android project
 npm run build:android
-# Em seguida, abra no Android Studio:
+
+# Open in Android Studio to generate APK/AAB
 npm run android:open
 ```
 
-### Apenas Web
+> **Prerequisites for Android:** Android Studio with SDK installed. Run `npx cap add android` once before the first build.
+
+### Web only
 
 ```bash
 npm run build:web
 ```
 
-### Scripts disponíveis
+### Available scripts
 
-| Comando | Descrição |
+| Command | Description |
 |---|---|
-| `npm run dev` | Servidor de desenvolvimento Vite |
-| `npm run build` | Build completo (web + electron + android sync) |
-| `npm run build:web` | Build apenas do frontend web |
-| `npm run build:electron` | Build web + empacotamento Electron |
-| `npm run build:android` | Build web + sync Capacitor Android |
-| `npm run generate` | Gera tools.json a partir do GitHub |
-| `npm run electron:dev` | Electron em modo desenvolvimento |
-| `npm run android:open` | Abre projeto Android no Android Studio |
-| `npm run preview` | Preview do build web |
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Full build (web + Electron + Android sync) |
+| `npm run build:web` | Web frontend only |
+| `npm run build:electron` | Web + Electron packaging |
+| `npm run build:android` | Web + Capacitor Android sync |
+| `npm run generate` | Generate tools.json from GitHub |
+| `npm run electron:dev` | Run Electron in dev mode |
+| `npm run android:open` | Open Android project in Android Studio |
+| `npm run preview` | Preview the web build |
 
 ---
 
-## 📁 Estrutura do Projeto
+## 📁 Project Structure
 
 ```
 osint-explorer/
 ├── electron/
-│   └── main.js              # Processo principal do Electron
+│   └── main.js              # Electron main process
 ├── public/
 │   └── data/
-│       └── tools.json       # Cache gerado automaticamente
+│       └── tools.json       # Auto-generated tool cache
 ├── scripts/
-│   └── fetch-osint-md.js    # Script de geração de tools.json
+│   └── fetch-osint-md.js    # tools.json generator script
 ├── src/
 │   ├── components/
-│   │   ├── Header.jsx       # Barra de navegação e controles
-│   │   ├── Sidebar.jsx      # Categorias e filtros
-│   │   ├── MainContent.jsx  # Listagem de ferramentas
-│   │   ├── LandingPage.jsx  # Página inicial
-│   │   └── Toast.jsx        # Notificações
+│   │   ├── Header.jsx       # Navigation bar and controls
+│   │   ├── Sidebar.jsx      # Categories and filters
+│   │   ├── MainContent.jsx  # Tool listing
+│   │   ├── LandingPage.jsx  # Landing page
+│   │   └── Toast.jsx        # Notifications
 │   ├── context/
-│   │   └── AppContext.jsx   # Estado global da aplicação
+│   │   └── AppContext.jsx   # Global application state
 │   ├── data/
-│   │   ├── categories.js    # Definição de categorias (53) com i18n
-│   │   └── i18n.js          # Traduções para 30 idiomas
+│   │   ├── categories.js    # 53 categories with i18n
+│   │   └── i18n.js          # Translations for 30 languages
 │   ├── hooks/
-│   │   ├── useToolsLoader.js  # Carregamento de ferramentas
-│   │   └── useSEO.js          # Gerenciamento de meta tags
+│   │   ├── useToolsLoader.js  # Tools data loader
+│   │   └── useSEO.js          # Meta tag management
 │   ├── utils/
-│   │   └── parseMd.js       # Parser do README do awesome-osint
-│   └── App.jsx              # Componente raiz
-├── android/                 # Projeto Capacitor Android
-├── capacitor.config.json    # Configuração do Capacitor
-├── vite.config.js           # Configuração do Vite
-├── tailwind.config.js       # Configuração do Tailwind
+│   │   └── parseMd.js       # awesome-osint README parser
+│   └── App.jsx              # Root component
+├── android/                 # Capacitor Android project
+├── capacitor.config.json    # Capacitor configuration
+├── vite.config.js           # Vite configuration
+├── tailwind.config.js       # Tailwind configuration
 └── package.json
 ```
 
 ---
 
-## 🌍 Internacionalização
+## 🌍 Internationalization
 
-O projeto suporta **30 idiomas** com fallback automático para inglês e depois português:
+**30 languages** supported with automatic fallback (English → Portuguese):
 
-| Código | Idioma | Código | Idioma |
+| Code | Language | Code | Language |
 |---|---|---|---|
 | `pt` | Português 🇧🇷 | `ko` | 한국어 🇰🇷 |
 | `en` | English 🇺🇸 | `ar` | العربية 🇸🇦 |
@@ -241,51 +247,51 @@ O projeto suporta **30 idiomas** com fallback automático para inglês e depois 
 | `vi` | Tiếng Việt 🇻🇳 | `id` | Bahasa Indonesia 🇮🇩 |
 | `ms` | Bahasa Melayu 🇲🇾 | `fa` | فارسی 🇮🇷 |
 
-A linguagem é detectada automaticamente pelo navegador e pode ser alterada pelo usuário. Idiomas RTL (Árabe, Persa) têm suporte completo com `dir="rtl"`.
+Language is auto-detected from the browser and can be changed by the user. RTL languages (Arabic, Persian) have full `dir="rtl"` support.
 
 ---
 
 ## 🔎 SEO
 
-- Meta tags dinâmicas por idioma (title, description, keywords)
-- Open Graph para compartilhamento em redes sociais
+- Per-language dynamic meta tags (title, description, keywords)
+- Open Graph tags for social sharing
 - Twitter Cards
-- `hreflang` alternates para 30 idiomas
-- JSON-LD structured data (WebApplication)
+- `hreflang` alternate links for all 30 languages
+- JSON-LD structured data (WebApplication schema)
 - Canonical URL
-- `robots.txt` e `sitemap.xml`
 
 ---
 
-## 🤝 Contribuindo
+## 🤝 Contributing
 
-Contribuições são muito bem-vindas! Leia o [CONTRIBUTING.md](CONTRIBUTING.md) para saber como participar.
+Contributions are welcome! Read [CONTRIBUTING.md](CONTRIBUTING.md) to get started.
 
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/nova-feature`)
-3. Faça commit das suas mudanças (`git commit -m 'feat: adiciona nova feature'`)
-4. Faça push para a branch (`git push origin feature/nova-feature`)
-5. Abra um Pull Request
-
----
-
-## 🔒 Segurança
-
-Encontrou uma vulnerabilidade? Leia nossa [Política de Segurança](SECURITY.md).
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/my-feature`)
+3. Commit your changes (`git commit -m 'feat: add my feature'`)
+4. Push to the branch (`git push origin feature/my-feature`)
+5. Open a Pull Request
 
 ---
 
-## 📄 Licença
+## 🔒 Security
 
-Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações.
+Found a vulnerability? Read our [Security Policy](SECURITY.md).
 
 ---
 
-## 👤 Autor
+## 📄 License
+
+Distributed under the MIT License. See [LICENSE](LICENSE) for details.
+
+---
+
+## 👤 Author
 
 **Juan Mathews Rebello Santos**
 
 - 🌐 Website: [juanmathewsrebellosantos.com](https://juanmathewsrebellosantos.com)
+- 🔍 OSINT Tool: [osint.juanmathewsrebellosantos.com](https://osint.juanmathewsrebellosantos.com)
 - 💼 LinkedIn: [linkedin.com/in/juanmathews](https://linkedin.com/in/juanmathews)
 - 🐙 GitHub: [@azurejoga](https://github.com/azurejoga)
 
@@ -293,8 +299,8 @@ Distribuído sob a licença MIT. Veja [LICENSE](LICENSE) para mais informações
 
 <div align="center">
 
-Feito com ❤️ no Brasil 🇧🇷 para o mundo 🌍
+Made with ❤️ in Brazil 🇧🇷 for the world 🌍
 
-⭐ Se este projeto te ajudou, considere dar uma estrela!
+⭐ If this project helped you, please give it a star!
 
 </div>

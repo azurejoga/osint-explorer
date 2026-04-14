@@ -291,6 +291,24 @@ function Footer() {
       >
         LinkedIn
       </a>
+      <a
+        href="https://github.com/azurejoga/osint-explorer"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-indigo-400 transition-colors underline underline-offset-2"
+        aria-label={t('footerGithub')}
+      >
+        GitHub
+      </a>
+      <a
+        href="https://github.com/azurejoga/osint-explorer/releases"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:text-emerald-400 transition-colors underline underline-offset-2 font-medium text-emerald-500"
+        aria-label={t('footerDownload')}
+      >
+        ⬇ {t('footerDownload')}
+      </a>
     </footer>
   )
 }

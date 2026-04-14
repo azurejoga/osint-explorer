@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 
-const SITE_URL = 'https://osintbrasil.com'
+const SITE_URL = 'https://osint.juanmathewsrebellosantos.com'
 
 const LOCALE_MAP = {
   pt: 'pt_BR', en: 'en_US', es: 'es_ES', fr: 'fr_FR', de: 'de_DE',
