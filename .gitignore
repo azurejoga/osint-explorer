@@ -1,0 +1,59 @@
+# ── Dependencies ──────────────────────────────────────────────────────────────
+node_modules/
+
+# ── Build outputs ─────────────────────────────────────────────────────────────
+dist/
+dist-electron/
+
+# ── Android ───────────────────────────────────────────────────────────────────
+android/local.properties
+android/.gradle/
+android/app/build/
+android/build/
+android/capacitor-cordova-android-plugins/build/
+android/.idea/
+android/*.iml
+android/app/*.iml
+
+# ── iOS ───────────────────────────────────────────────────────────────────────
+ios/App/Pods/
+ios/App/App.xcworkspace/xcuserdata/
+ios/.idea/
+
+# ── Generated data ────────────────────────────────────────────────────────────
+public/data/tools.json
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+
+# ── OS files ──────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Electron builder cache ────────────────────────────────────────────────────
+.electron-builder-cache/
+build_output.txt
+
+# ── Vite cache ────────────────────────────────────────────────────────────────
+.vite/

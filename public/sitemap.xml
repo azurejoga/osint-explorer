@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Default (PT-BR) -->
+  <url>
+    <loc>https://osintbrasil.com/</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://osintbrasil.com/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR"    href="https://osintbrasil.com/"/>
+    <xhtml:link rel="alternate" hreflang="en"       href="https://osintbrasil.com/?lang=en"/>
+    <xhtml:link rel="alternate" hreflang="es"       href="https://osintbrasil.com/?lang=es"/>
+    <xhtml:link rel="alternate" hreflang="fr"       href="https://osintbrasil.com/?lang=fr"/>
+    <xhtml:link rel="alternate" hreflang="de"       href="https://osintbrasil.com/?lang=de"/>
+    <xhtml:link rel="alternate" hreflang="it"       href="https://osintbrasil.com/?lang=it"/>
+    <xhtml:link rel="alternate" hreflang="nl"       href="https://osintbrasil.com/?lang=nl"/>
+    <xhtml:link rel="alternate" hreflang="ru"       href="https://osintbrasil.com/?lang=ru"/>
+    <xhtml:link rel="alternate" hreflang="zh-CN"    href="https://osintbrasil.com/?lang=zh"/>
+    <xhtml:link rel="alternate" hreflang="ja"       href="https://osintbrasil.com/?lang=ja"/>
+    <xhtml:link rel="alternate" hreflang="ko"       href="https://osintbrasil.com/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="ar"       href="https://osintbrasil.com/?lang=ar"/>
+    <xhtml:link rel="alternate" hreflang="hi"       href="https://osintbrasil.com/?lang=hi"/>
+    <xhtml:link rel="alternate" hreflang="bn"       href="https://osintbrasil.com/?lang=bn"/>
+    <xhtml:link rel="alternate" hreflang="tr"       href="https://osintbrasil.com/?lang=tr"/>
+    <xhtml:link rel="alternate" hreflang="pl"       href="https://osintbrasil.com/?lang=pl"/>
+    <xhtml:link rel="alternate" hreflang="sv"       href="https://osintbrasil.com/?lang=sv"/>
+    <xhtml:link rel="alternate" hreflang="no"       href="https://osintbrasil.com/?lang=no"/>
+    <xhtml:link rel="alternate" hreflang="da"       href="https://osintbrasil.com/?lang=da"/>
+    <xhtml:link rel="alternate" hreflang="fi"       href="https://osintbrasil.com/?lang=fi"/>
+    <xhtml:link rel="alternate" hreflang="cs"       href="https://osintbrasil.com/?lang=cs"/>
+    <xhtml:link rel="alternate" hreflang="ro"       href="https://osintbrasil.com/?lang=ro"/>
+    <xhtml:link rel="alternate" hreflang="hu"       href="https://osintbrasil.com/?lang=hu"/>
+    <xhtml:link rel="alternate" hreflang="el"       href="https://osintbrasil.com/?lang=el"/>
+    <xhtml:link rel="alternate" hreflang="uk"       href="https://osintbrasil.com/?lang=uk"/>
+    <xhtml:link rel="alternate" hreflang="th"       href="https://osintbrasil.com/?lang=th"/>
+    <xhtml:link rel="alternate" hreflang="vi"       href="https://osintbrasil.com/?lang=vi"/>
+    <xhtml:link rel="alternate" hreflang="id"       href="https://osintbrasil.com/?lang=id"/>
+    <xhtml:link rel="alternate" hreflang="ms"       href="https://osintbrasil.com/?lang=ms"/>
+    <xhtml:link rel="alternate" hreflang="fa"       href="https://osintbrasil.com/?lang=fa"/>
+    <image:image>
+      <image:loc>https://osintbrasil.com/og-image.png</image:loc>
+      <image:title>OSINT Brasil — +1.300 Ferramentas de Investigação Gratuitas</image:title>
+      <image:caption>O maior diretório gratuito de ferramentas OSINT. Atualizadas automaticamente do GitHub.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>

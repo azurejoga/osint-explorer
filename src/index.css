@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { box-sizing: border-box; }
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  ::-webkit-scrollbar { @apply w-1.5 h-1.5; }
+  ::-webkit-scrollbar-track { @apply bg-gray-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-500; }
+
+  /* WCAG 2.2 – Focus visible for all interactive elements */
+  :focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  /* Skip navigation link – WCAG 2.4.1 */
+  .skip-link {
+    @apply absolute -top-full left-4 z-[200] px-4 py-2 bg-indigo-600 text-white text-sm font-semibold rounded-b-lg;
+    transition: top 0.1s;
+  }
+  .skip-link:focus { top: 0; }
+
+  /* Minimum touch target 44×44px – WCAG 2.5.5 */
+  button, [role="button"], a[href] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Override for purely icon buttons inside toolbar that are visually smaller */
+  .touch-safe { min-height: 44px; min-width: 44px; display: inline-flex; align-items: center; justify-content: center; }
+}
+
+@layer components {
+  .sidebar-item {
+    @apply flex items-center gap-2.5 px-3 py-2 rounded-lg text-sm transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-item:hover {
+    @apply bg-gray-800 text-white;
+  }
+  .sidebar-item.active {
+    @apply bg-indigo-600/20 text-indigo-400 border border-indigo-500/30;
+  }
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-lg hover:shadow-black/30 hover:-translate-y-0.5;
+  }
+  .btn {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-150;
+  }
+  .btn-primary {
+    @apply bg-indigo-600 hover:bg-indigo-500 text-white;
+  }
+  .btn-ghost {
+    @apply text-gray-400 hover:text-white hover:bg-gray-800;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-online {
+    @apply bg-green-500/15 text-green-400 border border-green-500/30;
+  }
+  .badge-offline {
+    @apply bg-red-500/15 text-red-400 border border-red-500/30;
+  }
+  .badge-unknown {
+    @apply bg-yellow-500/15 text-yellow-400 border border-yellow-500/30;
+  }
+  .input {
+    @apply bg-gray-800 border border-gray-700 rounded-lg px-3 py-2 text-sm text-gray-100 placeholder-gray-500
+           focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500 transition-all;
+  }
+  .glass {
+    @apply bg-gray-900/80 backdrop-blur-sm border border-gray-800/80;
+  }
+}
+
+.light body {
+  @apply bg-gray-50 text-gray-900;
+}
+
+.light .sidebar-item:hover {
+  @apply bg-gray-100 text-gray-900;
+}
+
+.light .sidebar-item.active {
+  @apply bg-indigo-50 text-indigo-700 border-indigo-200;
+}
+
+.light .glass {
+  @apply bg-white/90 border-gray-200;
+}
+
+.light .input {
+  @apply bg-white border-gray-300 text-gray-900 placeholder-gray-400;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html.light {
+  color-scheme: light;
+}

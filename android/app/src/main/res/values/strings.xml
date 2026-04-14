@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">OSINT Tools</string>
+    <string name="title_activity_main">OSINT Tools</string>
+    <string name="package_name">com.osint.tools</string>
+    <string name="custom_url_scheme">com.osint.tools</string>
+</resources>
