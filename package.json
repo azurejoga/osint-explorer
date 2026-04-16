@@ -11,8 +11,10 @@
   "main": "electron/main.js",
   "scripts": {
     "generate": "node scripts/fetch-osint-md.js",
-    "predev": "npm run generate",
-    "prebuild": "npm run generate",
+    "merge-osint-framework": "node scripts/merge-osint-framework.js",
+    "generate:all": "npm run merge-osint-framework && npm run generate",
+    "predev": "npm run merge-osint-framework",
+    "prebuild": "npm run merge-osint-framework",
     "dev": "vite",
     "build:web": "vite build",
     "build": "npm run build:web && electron-builder && npx cap sync android",
