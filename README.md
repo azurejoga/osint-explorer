@@ -5,7 +5,7 @@
 **The world's largest free OSINT tools directory**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Tools](https://img.shields.io/badge/Tools-1%2C300%2B-blue)](https://osint.juanmathewsrebellosantos.com)
+[![Tools](https://img.shields.io/badge/Tools-2%2C369-blue)](https://osint.juanmathewsrebellosantos.com)
 [![Categories](https://img.shields.io/badge/Categories-53-green)](https://osint.juanmathewsrebellosantos.com)
 [![Languages](https://img.shields.io/badge/Languages-30-orange)](https://osint.juanmathewsrebellosantos.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -41,9 +41,11 @@
 
 ## 🔍 About
 
-**OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **1,300+ Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **30 languages**, available as a **web app, Windows desktop app, and Android app**.
+**OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **2,369 Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **30 languages**, available as a **web app, Windows desktop app, and Android app**.
 
-Tools are automatically updated from the [awesome-osint](https://github.com/jivoi/awesome-osint) repository on GitHub, keeping the directory always current.
+Tools are automatically merged from two sources:
+- [OSINT-Framework](https://github.com/lockfale/osint-framework) (1,050 tools)
+- [awesome-osint](https://github.com/jivoi/awesome-osint) (1,319 tools)
 
 ### 🎯 Who is it for?
 
@@ -59,10 +61,10 @@ Tools are automatically updated from the [awesome-osint](https://github.com/jivo
 
 ## ✨ Features
 
-- **🔄 Auto-update** — Syncs with GitHub on every launch, offline fallback to bundled cache
+- **🔄 Auto-update** — Merges from OSINT-Framework and awesome-osint on every launch
 - **🌍 30 languages** — Portuguese, English, Spanish, French, German, Russian, Chinese, Japanese, Arabic and more
 - **📱 Cross-platform** — Web, Windows and Android
-- **🔍 Real-time search** — Search by name, description and tags across 1,300+ tools
+- **🔍 Real-time search** — Search by name, description and tags across 2,369 tools
 - **📂 53 categories** — Organized in thematic groups with expandable accordion sidebar
 - **⭐ Favorites** — Save favorite tools with local persistence
 - **🎨 5 view modes** — Grid, List, Table, Tree, Compact
@@ -70,6 +72,7 @@ Tools are automatically updated from the [awesome-osint](https://github.com/jivo
 - **♿ Accessibility** — ARIA labels, skip links, full RTL support (Arabic, Persian)
 - **🔎 Aggressive SEO** — Meta tags, Open Graph, Twitter Cards, hreflang for 30 languages
 - **📊 Real-time stats** — Total tools, online/offline status, favorites count
+- **🔒 Rich metadata** — OPSEC considerations, pricing (free/freemium), input/output types, best-for use cases
 
 ---
 
@@ -294,6 +297,10 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 - 🔍 OSINT Tool: [osint.juanmathewsrebellosantos.com](https://osint.juanmathewsrebellosantos.com)
 - 💼 LinkedIn: [linkedin.com/in/juanmathews](https://linkedin.com/in/juanmathews)
 - 🐙 GitHub: [@azurejoga](https://github.com/azurejoga)
+
+### 🙏 Acknowledgments
+
+Thanks to [moscovium-mc](https://github.com/moscovium-mc) for the major expansion from ~1,300 to 2,369 tools by merging OSINT-Framework data.
 
 ---
 

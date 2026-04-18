@@ -1,10 +1,10 @@
 /**
- * Loads tools — always fetches fresh data from GitHub on every app open.
+ * Loads tools from OSINT-Framework and optionally merges with awesome-osint.
  * Strategy:
  *   1. Serve stale cache instantly (localStorage) → zero FOUC
- *   2. Fetch GitHub README in the background, parse it client-side
- *   3. If GitHub is unreachable → fall back to bundled /data/tools.json
- *   4. If version/etag changed → update cache and re-render
+ *   2. Load local bundled tools.json (OSINT-Framework tools) as primary source
+ *   3. Optionally fetch awesome-osint from GitHub to merge additional tools
+ *   4. Deduplicate by URL and merge metadata
  */
 
 import { useState, useEffect, useMemo } from 'react'
@@ -29,6 +29,20 @@ function writeLocalCache(version, tools) {
   } catch {}
 }
 
+function mergeTools(localTools, awesomeTools) {
+  const seenUrls = new Set(localTools.map(t => t.url))
+  const merged = [...localTools]
+
+  for (const tool of awesomeTools) {
+    if (!seenUrls.has(tool.url)) {
+      merged.push({ ...tool, source: 'awesome-osint' })
+      seenUrls.add(tool.url)
+    }
+  }
+
+  return merged
+}
+
 export function useToolsLoader() {
   const [tools, setTools]     = useState(() => readLocalCache() || [])
   const [loading, setLoading] = useState(tools.length === 0)
@@ -38,42 +52,46 @@ export function useToolsLoader() {
     let cancelled = false
 
     async function fetchTools() {
-      let freshTools = null
+      let localTools = []
       let newVersion = null
 
-      // ── 1. Try GitHub README (live, always up-to-date) ───────────────────
+      // ── 1. Load local tools.json (OSINT-Framework) ───────────────────────
+      try {
+        const res = await fetch(LOCAL_JSON, { cache: 'no-cache' })
+        if (res.ok) {
+          const data = await res.json()
+          localTools = data.tools || []
+          newVersion = data.version
+        }
+      } catch (err) {
+        console.warn('[useToolsLoader] Local tools.json not available:', err.message)
+      }
+
+      // ── 2. Try to merge with awesome-osint from GitHub ───────────────────
       try {
         const res = await fetch(MD_URL, { cache: 'no-cache' })
         if (res.ok) {
-          const md  = await res.text()
-          const etag = res.headers.get('etag') || res.headers.get('last-modified') || new Date().toDateString()
-          freshTools = parseMD(md)
-          newVersion = etag
+          const md    = await res.text()
+          const etag  = res.headers.get('etag') || res.headers.get('last-modified') || new Date().toDateString()
+          const awesomeTools = parseMD(md)
+          localTools = mergeTools(localTools, awesomeTools)
+          newVersion = `merged-${etag}`
         }
       } catch {
-        // network unavailable — try local fallback
+        // awesome-osint unavailable — use local tools only
       }
 
-      // ── 2. Fallback to bundled tools.json if GitHub unreachable ──────────
-      if (!freshTools) {
-        try {
-          const res  = await fetch(LOCAL_JSON, { cache: 'no-cache' })
-          if (res.ok) {
-            const data = await res.json()
-            freshTools = data.tools
-            newVersion = data.version
-          }
-        } catch (err) {
-          console.warn('[useToolsLoader] Both GitHub and local JSON failed:', err.message)
-        }
-      }
+      if (cancelled) return
 
-      if (cancelled || !freshTools) { setLoading(false); return }
+      if (localTools.length === 0) {
+        setLoading(false)
+        return
+      }
 
       const cachedVersion = localStorage.getItem(LS_VERSION)
       if (cachedVersion !== newVersion || tools.length === 0) {
-        writeLocalCache(newVersion, freshTools)
-        setTools(freshTools)
+        writeLocalCache(newVersion, localTools)
+        setTools(localTools)
       }
       setVersion(newVersion)
       setLoading(false)
