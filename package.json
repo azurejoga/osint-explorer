@@ -1,72 +1,27 @@
 {
-  "name": "osint-tools-brasil",
-  "private": true,
+  "name": "arf",
   "version": "1.0.0",
-  "description": "OSINT Tools Explorer — Professional Intelligence Directory for Cybersecurity and Investigation",
-  "author": {
-    "name": "Juan Mathews Rebello Santos",
-    "url": "https://juanmathewsrebellosantos.com"
-  },
-  "type": "module",
-  "main": "electron/main.js",
+  "description": "Advanced Reconnaissance Framework",
+  "main": "public/index.html",
   "scripts": {
-    "generate": "node scripts/fetch-osint-md.js",
-    "merge-osint-framework": "node scripts/merge-osint-framework.js",
-    "generate:all": "npm run merge-osint-framework && npm run generate",
-    "predev": "npm run merge-osint-framework",
-    "prebuild": "npm run merge-osint-framework",
-    "dev": "vite",
-    "build:web": "vite build",
-    "build": "npm run build:web && electron-builder && npx cap sync android",
-    "build:electron": "npm run build:web && electron-builder",
-    "build:android": "npm run build:web && npx cap sync android",
-    "preview": "vite preview",
-    "electron:dev": "NODE_ENV=development electron .",
-    "android:sync": "npx cap sync android",
-    "android:open": "npx cap open android",
-    "ios:sync": "npx cap sync ios",
-    "ios:open": "npx cap open ios"
+    "postinstall": "copyfiles -f ./node_modules/d3/dist/d3.min.js ./public/js/",
+    "start": "cd ./public; python3 -m http.server 8000",
+    "deploy": "wrangler deploy",
+    "preview": "wrangler dev"
   },
-  "build": {
-    "appId": "com.osint.tools",
-    "productName": "OSINT Tools Explorer",
-    "directories": {
-      "output": "dist-electron"
-    },
-    "files": [
-      "dist/**/*",
-      "electron/**/*",
-      "public/**/*"
-    ],
-    "win": {
-      "target": ["nsis", "portable"],
-      "icon": "public/favicon.ico"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "public/favicon.ico"
-    },
-    "linux": {
-      "target": "AppImage",
-      "icon": "public/favicon.ico"
-    }
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lockfale/OSINT-Framework.git"
   },
-  "dependencies": {
-    "@capacitor/android": "^8.3.0",
-    "@capacitor/cli": "^8.3.0",
-    "@capacitor/core": "^8.3.0",
-    "lucide-react": "^0.400.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-helmet-async": "^3.0.0"
+  "author": "Justin Nordine (s0lray)",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/lockfale/OSINT-Framework/issues"
   },
+  "homepage": "https://github.com/lockfale/OSINT-Framework#readme",
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.3.0",
-    "autoprefixer": "^10.4.19",
-    "electron": "^41.2.0",
-    "electron-builder": "^26.8.1",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.3.1"
+    "copyfiles": "^1.0.0",
+    "d3": "^7.9.0",
+    "wrangler": "^4.76.0"
   }
 }
