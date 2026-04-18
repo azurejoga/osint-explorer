@@ -13,7 +13,7 @@ import { fileURLToPath } from 'url'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
-const ARF_PATH = path.resolve(__dirname, '../../OSINT-Framework/public/arf.json')
+const ARF_PATH = path.resolve(__dirname, '../osint-framework-data/arf.json')
 const OUT_PATH = path.resolve(__dirname, '../public/data/tools.json')
 const AWESOME_URL = 'https://raw.githubusercontent.com/jivoi/awesome-osint/master/README.md'
 
