@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, useCallback } from 'react'
 import { useToolsLoader } from '../hooks/useToolsLoader.js'
-import { getT, RTL_LANGS } from '../data/i18n.js'
+import { getT, getLocalized, normalizeLanguage, RTL_LANGS } from '../data/i18n.js'
 
 const AppContext = createContext(null)
 
@@ -11,11 +11,12 @@ const LS = {
 
 export function AppProvider({ children }) {
   const [language, setLanguageState] = useState(() => {
+    const queryLang = new URLSearchParams(window.location.search).get('lang')
+    if (queryLang) return normalizeLanguage(queryLang)
     const stored = LS.get('osint_lang', null)
-    if (stored) return stored
-    const SUPPORTED = new Set(['pt','en','es','fr','de','it','nl','ru','zh','ja','ko','ar','hi','bn','tr','pl','sv','no','da','fi','cs','ro','hu','el','uk','th','vi','id','ms','fa'])
-    const nav = (navigator.language || navigator.userLanguage || 'pt').substring(0, 2).toLowerCase()
-    return SUPPORTED.has(nav) ? nav : 'pt'
+    if (stored) return normalizeLanguage(stored)
+    const nav = navigator.language || navigator.userLanguage || 'pt'
+    return normalizeLanguage(nav)
   })
   const [theme, setThemeState]       = useState(() => LS.get('osint_theme', 'dark'))
   const [viewMode, setViewModeState] = useState(() => LS.get('osint_view', 'grid'))
@@ -43,10 +44,11 @@ export function AppProvider({ children }) {
   }, [theme, language])
 
   const setLanguage = useCallback((lang) => {
-    setLanguageState(lang)
-    LS.set('osint_lang', lang)
-    document.documentElement.dir = RTL_LANGS.has(lang) ? 'rtl' : 'ltr'
-    document.documentElement.lang = lang
+    const normalized = normalizeLanguage(lang)
+    setLanguageState(normalized)
+    LS.set('osint_lang', normalized)
+    document.documentElement.dir = RTL_LANGS.has(normalized) ? 'rtl' : 'ltr'
+    document.documentElement.lang = normalized
   }, [])
 
   const toggleTheme = useCallback(() => {
@@ -96,7 +98,7 @@ export function AppProvider({ children }) {
     if (hasSearch) {
       const q = searchQuery.toLowerCase()
       result = result.filter(t => {
-        const desc = t.description?.[language] || t.description?.en || t.description?.pt || ''
+        const desc = getLocalized(t.description, language)
         return (
           t.name.toLowerCase().includes(q) ||
           t.url.toLowerCase().includes(q) ||

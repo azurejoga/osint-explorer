@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ExternalLink, ChevronUp, ChevronDown } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES, CATEGORY_COLORS } from '../data/categories.js'
+import { CATEGORIES, CATEGORY_COLORS, getCategoryName } from '../data/categories.js'
+import { getLocalized } from '../data/i18n.js'
 import { getFaviconUrl } from '../utils/favicon.js'
 import StatusBadge from './StatusBadge.jsx'
 import FavoriteButton from './FavoriteButton.jsx'
@@ -11,7 +12,7 @@ function Row({ tool }) {
   const [imgError, setImgError] = useState(false)
   const cat = CATEGORIES.find(c => c.id === tool.category)
   const colors = cat ? CATEGORY_COLORS[cat.color] || CATEGORY_COLORS.slate : CATEGORY_COLORS.slate
-  const desc = tool.description?.[language] || tool.description?.en || tool.description?.pt || ''
+  const desc = getLocalized(tool.description, language)
   const faviconUrl = getFaviconUrl(tool.url)
 
   return (
@@ -31,7 +32,7 @@ function Row({ tool }) {
       <td className="px-4 py-3">
         {cat && (
           <span className={`badge ${colors.bg} ${colors.text} whitespace-nowrap`}>
-            {cat.icon} <span className="hidden xl:inline">{cat.name[language] || cat.name.pt}</span>
+            {cat.icon} <span className="hidden xl:inline">{getCategoryName(cat, language)}</span>
           </span>
         )}
       </td>

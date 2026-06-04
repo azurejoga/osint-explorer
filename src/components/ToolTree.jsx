@@ -1,13 +1,14 @@
 import React, { useState, useMemo } from 'react'
 import { ChevronRight, ChevronDown, ExternalLink } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES, CATEGORY_COLORS } from '../data/categories.js'
+import { CATEGORIES, CATEGORY_COLORS, getCategoryName } from '../data/categories.js'
+import { getLocalized } from '../data/i18n.js'
 import StatusBadge from './StatusBadge.jsx'
 import FavoriteButton from './FavoriteButton.jsx'
 
 function ToolNode({ tool }) {
   const { language } = useApp()
-  const desc = tool.description?.[language] || tool.description?.en || ''
+  const desc = getLocalized(tool.description, language)
   return (
     <div className="flex items-center gap-2 pl-8 py-1.5 hover:bg-gray-800/40 rounded-lg group transition-colors">
       <StatusBadge status={tool.status} small />
@@ -37,7 +38,7 @@ function CategoryNode({ category, tools }) {
       >
         {open ? <ChevronDown size={14} className="text-gray-400 flex-shrink-0" /> : <ChevronRight size={14} className="text-gray-400 flex-shrink-0" />}
         <span className="text-lg leading-none">{category.icon}</span>
-        <span className={`font-medium text-sm ${colors.text}`}>{category.name[language] || category.name.pt}</span>
+        <span className={`font-medium text-sm ${colors.text}`}>{getCategoryName(category, language)}</span>
         <span className="ml-auto text-xs text-gray-600 bg-gray-800 px-2 py-0.5 rounded-full">{tools.length}</span>
       </button>
       {open && (

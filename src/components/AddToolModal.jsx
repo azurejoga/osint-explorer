@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { X, Plus } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES } from '../data/categories.js'
+import { CATEGORIES, getCategoryName } from '../data/categories.js'
 
 export default function AddToolModal() {
   const { setShowAddModal, addCustomTool, t, language, allTools, showToast } = useApp()
@@ -88,7 +88,7 @@ export default function AddToolModal() {
                 <label className="block text-xs font-medium text-gray-400 mb-1.5">{t('toolCategory')}</label>
                 <select className="input w-full" value={form.category} onChange={set('category')}>
                   {CATEGORIES.map(cat => (
-                    <option key={cat.id} value={cat.id}>{cat.icon} {cat.name[language] || cat.name.pt}</option>
+                    <option key={cat.id} value={cat.id}>{cat.icon} {getCategoryName(cat, language)}</option>
                   ))}
                 </select>
               </div>
