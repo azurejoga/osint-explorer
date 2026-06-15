@@ -1,4 +1,81 @@
+import { getLocalized } from './i18n.js'
+
 const T = (pt, en, es, fr, de, it, nl, ru, zh, ja, ko, ar) => ({ pt, en, es, fr, de, it, nl, ru, zh, ja, ko, ar })
+
+const ZH_TW_CATEGORY_NAMES = {
+  'general-search': '一般搜尋',
+  'national-search': '國家搜尋引擎',
+  'meta-search': '整合搜尋',
+  'specialty-search': '專門搜尋',
+  'darkweb-search': '暗網搜尋',
+  'visual-search': '視覺搜尋',
+  'similar-sites': '相似網站',
+  'document-search': '文件與簡報',
+  'digital-footprint': '數位足跡',
+  'threat-actor': '威脅行為者',
+  'threat-maps': '即時威脅地圖',
+  'file-search': '檔案搜尋',
+  pastebins: 'Pastebin',
+  'code-search': '程式碼搜尋',
+  'social-networks': '社群網路',
+  'social-media-tools': '社群媒體工具',
+  twitter: 'Twitter / X',
+  facebook: 'Facebook',
+  instagram: 'Instagram',
+  pinterest: 'Pinterest',
+  reddit: 'Reddit',
+  vkontakte: 'VKontakte',
+  tumblr: 'Tumblr',
+  telegram: 'Telegram',
+  steam: 'Steam',
+  'blog-search': '部落格搜尋',
+  forums: '論壇與討論板',
+  'username-check': '使用者名稱查詢',
+  'web-monitoring': '網站監控',
+  browsers: '瀏覽器',
+  'offline-browsing': '離線瀏覽',
+  vpn: 'VPN 服務',
+  infographics: '資料視覺化',
+  'social-network-analysis': '社群網路分析',
+  'privacy-encryption': '隱私權與加密',
+  dns: 'DNS',
+  maritime: '海事',
+  'other-tools': '其他工具',
+  'threat-intelligence': '威脅情報',
+  'osint-videos': 'OSINT 影片',
+  'osint-blogs': 'OSINT 部落格',
+  'other-resources': '其他資源',
+  'awesome-lists': 'Awesome 清單',
+  'ai-ml': 'AI 與機器學習',
+  'advanced-threat-intel': '進階威脅情報',
+  'crypto-blockchain': '加密貨幣與區塊鏈',
+  'darkweb-intelligence': '暗網／深網情報',
+  'mobile-analysis': '行動裝置分析',
+  'iot-intelligence': 'IoT 情報',
+  'advanced-social-media': '進階社群媒體',
+  geospatial: '地理空間情報',
+  'financial-intel': '金融情報',
+  'email-communication': '電子郵件與通訊',
+  'malware-analysis': '惡意程式分析',
+  'image-video': '圖片與影片',
+  'domain-ip': '網域與 IP',
+  'phone-lookup': '電話號碼查詢',
+  'email-lookup': '電子郵件查詢',
+  'people-search': '人物搜尋',
+  geolocation: '地理定位',
+  maps: '地圖',
+  archives: '封存與快取',
+  'leaks-breaches': '資料外洩與入侵',
+  transport: '交通與追蹤',
+  'osint-frameworks': 'OSINT 框架',
+  'vuln-exploit': '弱點與利用',
+  'whois-records': 'WHOIS 與紀錄',
+  'data-visualization-tools': '分析工具',
+  'news-media': '新聞與媒體',
+  linkedin: 'LinkedIn',
+  'company-business': '公司與商務',
+  aviation: '航空',
+}
 
 export const CATEGORIES = [
   { id: 'general-search',         icon: '🔍', color: 'blue',    name: T('Busca Geral','General Search','Búsqueda General','Recherche Générale','Allgemeine Suche','Ricerca Generale','Algemeen Zoeken','Общий поиск','通用搜索','一般検索','일반 검색','بحث عام') },
@@ -76,7 +153,9 @@ export const CATEGORIES = [
 ]
 
 export const getCategoryById = (id) => CATEGORIES.find(c => c.id === id)
-export const getCategoryName = (cat, lang) => cat?.name?.[lang] ?? cat?.name?.en ?? cat?.name?.pt ?? ''
+export const getCategoryName = (cat, lang) => (
+  lang === 'zh-TW' ? ZH_TW_CATEGORY_NAMES[cat?.id] ?? getLocalized(cat?.name, lang) : getLocalized(cat?.name, lang)
+)
 
 export const CATEGORY_COLORS = {
   blue: { bg: 'bg-blue-500/15', text: 'text-blue-400', border: 'border-blue-500/30' },

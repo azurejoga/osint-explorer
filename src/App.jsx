@@ -10,7 +10,7 @@ import ToolCompact from './components/ToolCompact.jsx'
 import LandingPage from './components/LandingPage.jsx'
 import { useSEO } from './hooks/useSEO.js'
 import { RefreshCw, AlertCircle, Star, Loader2, FolderOpen } from 'lucide-react'
-import { CATEGORIES } from './data/categories.js'
+import { CATEGORIES, getCategoryName } from './data/categories.js'
 
 const PAGE_SIZE = 48 // tools rendered per "page"
 
@@ -131,7 +131,7 @@ function CategoryHeader() {
     <div className="flex items-center gap-3 mb-5 pb-4 border-b border-gray-800">
       <span className="text-3xl" aria-hidden="true">{cat.icon}</span>
       <div>
-        <h1 className="text-xl font-bold text-gray-100">{cat.name[language] || cat.name.pt}</h1>
+        <h1 className="text-xl font-bold text-gray-100">{getCategoryName(cat, language)}</h1>
         <p className="text-sm text-gray-500">
           <span className="font-semibold text-gray-300">{categoryStats[cat.id] || 0}</span>{' '}
           {t('toolsVerified')}

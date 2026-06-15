@@ -4,7 +4,7 @@ const SITE_URL = 'https://osint.juanmathewsrebellosantos.com'
 
 const LOCALE_MAP = {
   pt: 'pt_BR', en: 'en_US', es: 'es_ES', fr: 'fr_FR', de: 'de_DE',
-  it: 'it_IT', nl: 'nl_NL', ru: 'ru_RU', zh: 'zh_CN', ja: 'ja_JP',
+  it: 'it_IT', nl: 'nl_NL', ru: 'ru_RU', zh: 'zh_CN', 'zh-TW': 'zh_TW', ja: 'ja_JP',
   ko: 'ko_KR', ar: 'ar_SA', hi: 'hi_IN', bn: 'bn_BD', tr: 'tr_TR',
   pl: 'pl_PL', sv: 'sv_SE', no: 'no_NO', da: 'da_DK', fi: 'fi_FI',
   cs: 'cs_CZ', ro: 'ro_RO', hu: 'hu_HU', el: 'el_GR', uk: 'uk_UA',

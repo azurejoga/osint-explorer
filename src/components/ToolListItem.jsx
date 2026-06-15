@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ExternalLink } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES, CATEGORY_COLORS } from '../data/categories.js'
+import { CATEGORIES, CATEGORY_COLORS, getCategoryName } from '../data/categories.js'
+import { getLocalized } from '../data/i18n.js'
 import { getFaviconUrl } from '../utils/favicon.js'
 import StatusBadge from './StatusBadge.jsx'
 import FavoriteButton from './FavoriteButton.jsx'
@@ -12,7 +13,7 @@ export default function ToolListItem({ tool }) {
 
   const cat = CATEGORIES.find(c => c.id === tool.category)
   const colors = cat ? CATEGORY_COLORS[cat.color] || CATEGORY_COLORS.slate : CATEGORY_COLORS.slate
-  const desc = tool.description?.[language] || tool.description?.en || tool.description?.pt || ''
+  const desc = getLocalized(tool.description, language)
   const faviconUrl = getFaviconUrl(tool.url)
 
   return (
@@ -42,7 +43,7 @@ export default function ToolListItem({ tool }) {
       {/* Category */}
       {cat && (
         <span className={`badge ${colors.bg} ${colors.text} hidden md:inline-flex flex-shrink-0`}>
-          {cat.icon} <span className="hidden lg:inline">{cat.name[language] || cat.name.pt}</span>
+          {cat.icon} <span className="hidden lg:inline">{getCategoryName(cat, language)}</span>
         </span>
       )}
 
