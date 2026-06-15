@@ -1,5 +1,3 @@
-<div align="center">
-
 # 🇧🇷 OSINT Brasil — Tools Explorer
 
 **The world's largest free OSINT tools directory**
@@ -15,7 +13,7 @@
 **Read this in other languages:**
 [🇧🇷 Português](README.pt.md) · [🇪🇸 Español](README.es.md) · [🇨🇳 中文](README.zh.md) · [🇯🇵 日本語](README.ja.md)
 
-</div>
+
 
 ---
 
@@ -41,11 +39,8 @@
 
 ## 🔍 About
 
-<<<<<<< HEAD
-**OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **1,300+ Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **31 languages**, available as a **web app, Windows desktop app, and Android app**.
-=======
 **OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **2,369 Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **30 languages**, available as a **web app, Windows desktop app, and Android app**.
->>>>>>> chore: merge OSINT-Framework, bump to v1.1.0
+
 
 Tools are automatically merged from two sources:
 - [OSINT-Framework](https://github.com/lockfale/osint-framework) (1,050 tools)
@@ -65,13 +60,9 @@ Tools are automatically merged from two sources:
 
 ## ✨ Features
 
-<<<<<<< HEAD
-- **🔄 Auto-update** — Syncs with GitHub on every launch, offline fallback to bundled cache
-- **🌍 31 languages** — Portuguese, English, Spanish, French, German, Russian, Chinese, Japanese, Arabic and more
-=======
 - **🔄 Auto-update** — Merges from OSINT-Framework and awesome-osint on every launch
 - **🌍 30 languages** — Portuguese, English, Spanish, French, German, Russian, Chinese, Japanese, Arabic and more
->>>>>>> chore: merge OSINT-Framework, bump to v1.1.0
+
 - **📱 Cross-platform** — Web, Windows and Android
 - **🔍 Real-time search** — Search by name, description and tags across 2,369 tools
 - **📂 53 categories** — Organized in thematic groups with expandable accordion sidebar
@@ -309,15 +300,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 - 🐙 GitHub: [@azurejoga](https://github.com/azurejoga)
 
 ### 🙏 Acknowledgments
-
 Thanks to [moscovium-mc](https://github.com/moscovium-mc) for the major expansion from ~1,300 to 2,369 tools by merging OSINT-Framework data.
-
----
-
-<div align="center">
-
 Made with ❤️ in Brazil 🇧🇷 for the world 🌍
 
 ⭐ If this project helped you, please give it a star!
-
-</div>
