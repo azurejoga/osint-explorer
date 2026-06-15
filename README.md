@@ -1,5 +1,3 @@
-<div align="center">
-
 # 🇧🇷 OSINT Brasil — Tools Explorer
 
 **The world's largest free OSINT tools directory**
@@ -7,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Tools](https://img.shields.io/badge/Tools-2%2C369-blue)](https://osint.juanmathewsrebellosantos.com)
 [![Categories](https://img.shields.io/badge/Categories-53-green)](https://osint.juanmathewsrebellosantos.com)
-[![Languages](https://img.shields.io/badge/Languages-30-orange)](https://osint.juanmathewsrebellosantos.com)
+[![Languages](https://img.shields.io/badge/Languages-31-orange)](https://osint.juanmathewsrebellosantos.com)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 [🌐 Live Demo](https://osint.juanmathewsrebellosantos.com) · [📱 Android](#android) · [💻 Desktop](#desktop-electron) · [🐛 Report Bug](https://github.com/azurejoga/osint-explorer/issues) · [💡 Request Feature](https://github.com/azurejoga/osint-explorer/issues)
@@ -15,7 +13,7 @@
 **Read this in other languages:**
 [🇧🇷 Português](README.pt.md) · [🇪🇸 Español](README.es.md) · [🇨🇳 中文](README.zh.md) · [🇯🇵 日本語](README.ja.md)
 
-</div>
+
 
 ---
 
@@ -43,6 +41,7 @@
 
 **OSINT Brasil** is a complete open-source platform for intelligence professionals, investigators, journalists, and cybersecurity researchers. It aggregates **2,369 Open Source Intelligence (OSINT) tools** organized in **53 categories**, with support for **30 languages**, available as a **web app, Windows desktop app, and Android app**.
 
+
 Tools are automatically merged from two sources:
 - [OSINT-Framework](https://github.com/lockfale/osint-framework) (1,050 tools)
 - [awesome-osint](https://github.com/jivoi/awesome-osint) (1,319 tools)
@@ -63,6 +62,7 @@ Tools are automatically merged from two sources:
 
 - **🔄 Auto-update** — Merges from OSINT-Framework and awesome-osint on every launch
 - **🌍 30 languages** — Portuguese, English, Spanish, French, German, Russian, Chinese, Japanese, Arabic and more
+
 - **📱 Cross-platform** — Web, Windows and Android
 - **🔍 Real-time search** — Search by name, description and tags across 2,369 tools
 - **📂 53 categories** — Organized in thematic groups with expandable accordion sidebar
@@ -70,7 +70,7 @@ Tools are automatically merged from two sources:
 - **🎨 5 view modes** — Grid, List, Table, Tree, Compact
 - **🌙 Dark / light theme** — Persisted in localStorage
 - **♿ Accessibility** — ARIA labels, skip links, full RTL support (Arabic, Persian)
-- **🔎 Aggressive SEO** — Meta tags, Open Graph, Twitter Cards, hreflang for 30 languages
+- **🔎 Aggressive SEO** — Meta tags, Open Graph, Twitter Cards, hreflang for 31 languages
 - **📊 Real-time stats** — Total tools, online/offline status, favorites count
 - **🔒 Rich metadata** — OPSEC considerations, pricing (free/freemium), input/output types, best-for use cases
 
@@ -212,7 +212,7 @@ osint-explorer/
 │   │   └── AppContext.jsx   # Global application state
 │   ├── data/
 │   │   ├── categories.js    # 53 categories with i18n
-│   │   └── i18n.js          # Translations for 30 languages
+│   │   └── i18n.js          # Translations for 31 languages
 │   ├── hooks/
 │   │   ├── useToolsLoader.js  # Tools data loader
 │   │   └── useSEO.js          # Meta tag management
@@ -230,7 +230,7 @@ osint-explorer/
 
 ## 🌍 Internationalization
 
-**30 languages** supported with automatic fallback (English → Portuguese):
+**31 languages** supported with automatic fallback (English → Portuguese):
 
 | Code | Language | Code | Language |
 |---|---|---|---|
@@ -242,13 +242,14 @@ osint-explorer/
 | `it` | Italiano 🇮🇹 | `pl` | Polski 🇵🇱 |
 | `nl` | Nederlands 🇳🇱 | `sv` | Svenska 🇸🇪 |
 | `ru` | Русский 🇷🇺 | `no` | Norsk 🇳🇴 |
-| `zh` | 中文 🇨🇳 | `da` | Dansk 🇩🇰 |
-| `ja` | 日本語 🇯🇵 | `fi` | Suomi 🇫🇮 |
-| `uk` | Українська 🇺🇦 | `cs` | Čeština 🇨🇿 |
-| `el` | Ελληνικά 🇬🇷 | `ro` | Română 🇷🇴 |
-| `hu` | Magyar 🇭🇺 | `th` | ภาษาไทย 🇹🇭 |
-| `vi` | Tiếng Việt 🇻🇳 | `id` | Bahasa Indonesia 🇮🇩 |
-| `ms` | Bahasa Melayu 🇲🇾 | `fa` | فارسی 🇮🇷 |
+| `zh` | 中文 🇨🇳 | `zh-TW` | 繁體中文 🇹🇼 |
+| `ja` | 日本語 🇯🇵 | `da` | Dansk 🇩🇰 |
+| `fi` | Suomi 🇫🇮 | `cs` | Čeština 🇨🇿 |
+| `uk` | Українська 🇺🇦 | `ro` | Română 🇷🇴 |
+| `el` | Ελληνικά 🇬🇷 | `hu` | Magyar 🇭🇺 |
+| `th` | ภาษาไทย 🇹🇭 | `vi` | Tiếng Việt 🇻🇳 |
+| `id` | Bahasa Indonesia 🇮🇩 | `ms` | Bahasa Melayu 🇲🇾 |
+| `fa` | فارسی 🇮🇷 |  |  |
 
 Language is auto-detected from the browser and can be changed by the user. RTL languages (Arabic, Persian) have full `dir="rtl"` support.
 
@@ -259,7 +260,7 @@ Language is auto-detected from the browser and can be changed by the user. RTL l
 - Per-language dynamic meta tags (title, description, keywords)
 - Open Graph tags for social sharing
 - Twitter Cards
-- `hreflang` alternate links for all 30 languages
+- `hreflang` alternate links for all 31 languages
 - JSON-LD structured data (WebApplication schema)
 - Canonical URL
 
@@ -299,15 +300,7 @@ Distributed under the MIT License. See [LICENSE](LICENSE) for details.
 - 🐙 GitHub: [@azurejoga](https://github.com/azurejoga)
 
 ### 🙏 Acknowledgments
-
 Thanks to [moscovium-mc](https://github.com/moscovium-mc) for the major expansion from ~1,300 to 2,369 tools by merging OSINT-Framework data.
-
----
-
-<div align="center">
-
 Made with ❤️ in Brazil 🇧🇷 for the world 🌍
 
 ⭐ If this project helped you, please give it a star!
-
-</div>

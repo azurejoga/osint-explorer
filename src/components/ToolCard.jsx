@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { ExternalLink } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES, CATEGORY_COLORS } from '../data/categories.js'
+import { CATEGORIES, CATEGORY_COLORS, getCategoryName } from '../data/categories.js'
+import { getLocalized } from '../data/i18n.js'
 import { getFaviconUrl } from '../utils/favicon.js'
 import StatusBadge from './StatusBadge.jsx'
 import FavoriteButton from './FavoriteButton.jsx'
@@ -20,7 +21,7 @@ export default function ToolCard({ tool }) {
 
   const cat = CATEGORIES.find(c => c.id === tool.category)
   const colors = cat ? CATEGORY_COLORS[cat.color] || CATEGORY_COLORS.slate : CATEGORY_COLORS.slate
-  const desc = tool.description?.[language] || tool.description?.en || tool.description?.pt || ''
+  const desc = getLocalized(tool.description, language)
   const faviconUrl = getFaviconUrl(tool.url)
 
   const flagEmoji = flag(tool.countryCode)
@@ -60,7 +61,7 @@ export default function ToolCard({ tool }) {
         {cat && (
           <span className={`badge ${colors.bg} ${colors.text} ${colors.border}`}>
             <span>{cat.icon}</span>
-            <span className="truncate max-w-[120px]">{cat.name[language] || cat.name.pt}</span>
+            <span className="truncate max-w-[120px]">{getCategoryName(cat, language)}</span>
           </span>
         )}
         <StatusBadge status={tool.status} />

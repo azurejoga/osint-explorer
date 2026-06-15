@@ -1,10 +1,25 @@
 import React, { useState } from 'react'
 import { Search, Star, X, ChevronRight } from 'lucide-react'
 import { useApp } from '../context/AppContext.jsx'
-import { CATEGORIES, CATEGORY_COLORS } from '../data/categories.js'
+import { CATEGORIES, CATEGORY_COLORS, getCategoryName } from '../data/categories.js'
 
 // ── Category groups (accordion sections) ─────────────────────────────────────
 const GL = (pt, en, es, fr, de, it, nl, ru, zh, ja, ko, ar) => ({ pt, en, es, fr, de, it, nl, ru, zh, ja, ko, ar })
+
+const ZH_TW_GROUP_LABELS = {
+  search: '搜尋',
+  documents: '文件與程式碼',
+  social: '社群媒體',
+  security: '安全與威脅',
+  network: '網路與基礎設施',
+  people: '人物與聯絡方式',
+  geospatial: '地理空間',
+  media: '媒體與分析',
+  leaks: '外洩與快取',
+  news: '新聞與媒體',
+  business: '商務',
+  resources: '資源與工具',
+}
 
 const GROUPS = [
   {
@@ -105,7 +120,7 @@ export default function Sidebar() {
   // Build the flat list when user is searching (bypass groups)
   const isSearching = catSearch.trim().length > 0
   const allCatsWithTools = CATEGORIES.filter(c => (categoryStats[c.id] || 0) > 0)
-  const catName = (c) => c.name[language] ?? c.name.en ?? c.name.pt
+  const catName = (c) => getCategoryName(c, language)
 
   const searchResults = isSearching
     ? allCatsWithTools.filter(c => catName(c).toLowerCase().includes(catSearch.toLowerCase()))
@@ -253,7 +268,7 @@ export default function Sidebar() {
             const isOpen     = openGroups.has(group.id)
             const groupTotal = groupCats.reduce((sum, c) => sum + (categoryStats[c.id] || 0), 0)
             const hasActive  = groupCats.some(c => c.id === selectedCategory)
-            const groupLabel = group.label[language] ?? group.label.en ?? group.label.pt
+            const groupLabel = (language === 'zh-TW' ? ZH_TW_GROUP_LABELS[group.id] : null) ?? group.label[language] ?? group.label.en ?? group.label.pt
 
             return (
               <div key={group.id}>

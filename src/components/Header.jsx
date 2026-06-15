@@ -24,6 +24,7 @@ const LANGS = [
   { code: 'nl', flag: '🇳🇱', label: 'Nederlands' },
   { code: 'ru', flag: '🇷🇺', label: 'Русский' },
   { code: 'zh', flag: '🇨🇳', label: '中文' },
+  { code: 'zh-TW', flag: '🇹🇼', label: '繁體中文' },
   { code: 'ja', flag: '🇯🇵', label: '日本語' },
   { code: 'ko', flag: '🇰🇷', label: '한국어' },
   { code: 'ar', flag: '🇸🇦', label: 'العربية' },
